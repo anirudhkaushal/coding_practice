@@ -8,9 +8,10 @@ import sys
 
 # SOLUTION: the below function
 # here, we first traverse the whole array to find largest element - O(n)
-# then, we traverse the array again; in this traversal we don't look at the largest element anymore, thereby we find the next largest/second largest element
+# then, we traverse the array again; in this traversal we don't look at the largest element anymore, thereby we find the next largest/second largest element - O(n)
 # we also keep a variable named found which tells us whether there exists a second largest element 
 # for e.g., in case of [9, 9, 9, 9] , there is no second largest element; hence, we return -1
+# overall time complexity - O(n)
 def findSecondLargest(sequenceOfNumbers):
 
     largest = float('-inf')
