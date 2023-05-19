@@ -19,4 +19,25 @@ def makeBeautiful(str):
 
 	return count
 
+
+# optimal approach - produces correct result
+def makeBeautiful(str):
+
+	count1 = 0
+	count2 = 0
+
+	for i in range(len(str)):
+
+		pos = i + 1
+
+		if (pos % 2 == 1 and str[i] != '0') or (pos % 2 == 0 and str[i] != '1'):
+			count1 += 1		
+		
+		if (pos % 2 == 1 and str[i] != '1') or (pos % 2 == 0 and str[i] != '0'):
+			count2 += 1
+
+	if count1 < count2:
+		return count1
+
+	return count1
 	
