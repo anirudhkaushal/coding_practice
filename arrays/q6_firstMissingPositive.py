@@ -37,22 +37,17 @@ def firstMissing_better(arr, n):
 def firstMissing_best(arr, n):
 
     for i in range(n):
-        while 1 <= arr[i] <= n and arr[i] != (i+1):
-            swap = arr[arr[i]-1]
-            arr[arr[i]-1] = arr[i]
-            arr[i] =  swap
-
-    ans = 1
+        correctPos = arr[i]-1
+        while 1 <= arr[i] <= n and arr[i] != arr[correctPos]:
+            arr[i], arr[correctPos] = arr[correctPos], arr[i]
+            correctPos = arr[i]-1
 
     for i in range(n):
-        if arr[i] == ans:
-            ans += 1
+        if arr[i] != i+1:
+            return i+1
 
-    return ans
+    return n+1
 
-
-
-    
 
 # Main Code
 t=int(input())
