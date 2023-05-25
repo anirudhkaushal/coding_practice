@@ -3,6 +3,7 @@ from collections import *
 from sys import *
 from os import *
 
+# my approach - brute force with O(n^2) time complexity 
 def LongestSubsetWithZeroSum(arr):
 
     s = set()
