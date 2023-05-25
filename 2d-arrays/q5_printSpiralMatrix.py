@@ -29,9 +29,9 @@ def spiralPrint(mat, nRows, mCols):
 
         # top dir
         if left <= right:
-        for i in range(bottom, top - 1, -1):
-            ans.append(mat[i][left])
-        left += 1
+            for i in range(bottom, top - 1, -1):
+                ans.append(mat[i][left])
+            left += 1
 
 
     for a in ans:
