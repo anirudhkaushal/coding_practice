@@ -32,3 +32,26 @@ def LongestSubsetWithZeroSum(arr):
             max = v
 
     return max
+
+# optimal approach - O(n) time complexity using hash maps
+def LongestSubsetWithZeroSum_optimal(arr):
+
+    n = len(arr)
+    hmap = dict()
+
+    sum = 0
+    length = 0
+
+    hmap[sum] = -1
+
+    for i in range(n):
+        sum += arr[i]
+
+        if sum in hmap:
+            im_length = i - hmap[sum]
+            if im_length > length:
+                length = im_length
+        else:
+            hmap[sum] = i
+
+    return length
