@@ -37,6 +37,33 @@ def sort012(arr, n) :
 
     return ans
 
+# better approach: instead of hashmap we maintain 3 variables for count since we have only 0s, 1s, and 2s
+# also in this approach, we do not create a new array; we simply overwrite the original array
+# time complexity: O(n) + O(n)
+# space complexity: O(1)
+def sort012_better(arr, n) :
+
+    count0 = 0
+    count1 = 0
+    count2 = 0
+
+    for a in arr:
+        if a == 0:
+            count0 += 1
+        elif a == 1:
+            count1 += 1
+        else:
+            count2 += 1
+
+    for i in range(count0):
+        arr[i] = 0
+    
+    for i in range(count0, count0 + count1):
+        arr[i] = 1
+    
+    for i in range(count0 + count1, n):
+        arr[i] = 2
+
 
 #taking inpit using fast I/O
 def takeInput() :
