@@ -11,7 +11,7 @@ setrecursionlimit(10**7)
 # 2. sort the keys such that they're in sorted order 0 -> 1 -> 2
 # 3. next we add the keys (0, 1, & 2) into new arr the no. of times they appear in original array
 # time complexity: O(n) + O(k.log(k)) + O(n), where k = 3, since we have only 3 elements (0, 1, 2)
-# space complexity: O(n) ; the new arr to store ans
+# space complexity: O(n) ; the new arr to store ans + for storing hash map/dict
 # solution was accepted
 def sort012(arr, n) :
 

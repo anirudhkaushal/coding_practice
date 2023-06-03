@@ -1,27 +1,29 @@
-arr = [0, 1, 2, 2, 1, 0]
+# arr = [0, 1, 2, 2, 1, 0]
 
-freq = {}
+# freq = {}
 
-for a in arr:
-    if a in freq:
-        freq[a] += 1
-    else:
-        freq[a] = 1
+# for a in arr:
+#     if a in freq:
+#         freq[a] += 1
+#     else:
+#         freq[a] = 1
 
-print(freq)
+# print(freq)
 
-ans = []
+# ans = []
 
-freq_keys = list(freq.keys())
-freq_keys.sort()
+# freq_keys = list(freq.keys())
+# freq_keys.sort()
 
-print(freq_keys)
+# print(freq_keys)
 
-for k in freq_keys:
+# for k in freq_keys:
 
-    val = freq[k]
+#     val = freq[k]
 
-    for i in range(val):
-        ans.append(k)
+#     for i in range(val):
+#         ans.append(k)
 
-print(ans)
+# print(ans)
+
+print(5/2)
