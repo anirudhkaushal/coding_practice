@@ -25,3 +25,31 @@ def findMajorityElement(arr, n):
 
 	return -1
 		
+
+# optimal approach:
+# using moore's voting algorithm
+# time complexity: O(2n)
+# space complexity: O(1)
+def findMajorityElement_optimal(arr, n):
+
+	el = arr[0]
+	count = 0
+
+	for i in range(n):
+		if count == 0:
+			el = arr[i]
+			count = 1
+		elif arr[i] == el:
+			count += 1
+		else:
+			count -= 1
+
+	count2 = 0
+	for a in arr:
+		if a == el:
+			count2 += 1
+
+	if count2 > (n // 2):
+		return el
+
+	return -1
