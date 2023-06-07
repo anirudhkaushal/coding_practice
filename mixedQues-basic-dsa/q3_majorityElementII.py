@@ -4,7 +4,8 @@ from sys import *
 from os import *
 
 # my approach - using hashmap/dictionary
-def majorityElementII(arr):
+# here, we have 2 iterations - one of the arr, and other of the hashmap
+def majorityElementII__(arr):
 	# Write your code here.
 	
 	n = len(arr)
@@ -24,3 +25,25 @@ def majorityElementII(arr):
 			ans.append(k)
 
 	return ans
+
+
+# better approach - using hashmap/dict but only a single iteration of arr
+def majorityElementII(arr):
+
+	n = len(arr)
+	mpp = {}
+	ans = set()
+
+	for a in arr:
+		if a in mpp:
+			mpp[a] += 1
+		else:
+			mpp[a] = 1
+
+		if mpp[a] > (n // 3):
+			ans.add(a)
+			
+		if len(ans) == 2:
+			break
+
+	return list(ans)
