@@ -32,7 +32,7 @@ def majorityElementII(arr):
 
 	n = len(arr)
 	mpp = {}
-	ans = set()
+	ans = []
 
 	for a in arr:
 		if a in mpp:
@@ -40,10 +40,10 @@ def majorityElementII(arr):
 		else:
 			mpp[a] = 1
 
-		if mpp[a] > (n // 3):
-			ans.add(a)
+		if mpp[a] == (n // 3) + 1:
+			ans.append(a)
 			
 		if len(ans) == 2:
 			break
 
-	return list(ans)
+	return ans
